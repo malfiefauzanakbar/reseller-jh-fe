@@ -7,8 +7,23 @@ services:
       dockerfile: Dockerfile
     ports:
       - "9002:9002" # Map port 9002 of the container to port 9002 on the host
-    environment:
-      PORT: 9002
+    networks:
+      - web
+    # environment:
+    #   PORT: 9002
     volumes:
       - .:/app # Optional: Mount local directory for live updates (not recommended for production)
       - /app/node_modules # Prevent overwriting node_modules by the volume
+  nginx:
+    image: nginx
+    container_name: nginx-container
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # Mount custom config
+    ports:
+      - "80:80" # Expose NGINX on port 80
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge

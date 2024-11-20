@@ -18,9 +18,9 @@ services:
     image: nginx
     container_name: nginx-container
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # Mount custom config
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
-      - "80:80" # Expose NGINX on port 80
+      - "8080:80" # Map container's port 80 to host's port 8080
     networks:
       - web
 

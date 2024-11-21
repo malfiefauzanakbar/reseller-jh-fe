@@ -6,11 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9002:9002" # Map port 9002 of the container to port 9002 on the host
+      - "3000:3000" # Map port 3000 of the container to port 3000 on the host
     networks:
       - web
     # environment:
-    #   PORT: 9002
+    #   PORT: 3000
     volumes:
       - .:/app # Optional: Mount local directory for live updates (not recommended for production)
       - /app/node_modules # Prevent overwriting node_modules by the volume

@@ -28,7 +28,7 @@ RUN npm run build
 # COPY --from=builder /app/package.json package.json
 
 # Expose the port the app will run on
-EXPOSE 9002
+EXPOSE 3000
 
 # Start the app in production mode
 CMD ["npm", "start"]

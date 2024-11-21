@@ -38,30 +38,30 @@
                             ]">
                             <ul class="block lg:flex lg:space-x-12">
                                 <li class="group relative"
-                                    :class="{ 'text-[#E8B5BA] font-medium': activeSection === 'home' }">
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'home' }">
                                     <a @click.prevent="scrollToSection('home')"
-                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-[#E8B5BA] transition duration-300 ease-in-out cursor-pointer">
+                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Home
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-[#E8B5BA] font-medium': activeSection === 'journey' }">
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'journey' }">
                                     <a @click.prevent="scrollToSection('journey')"
-                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-[#E8B5BA] transition duration-300 ease-in-out cursor-pointer">
+                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Informasi
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-[#E8B5BA] font-medium': activeSection === 'fasilitas' }">
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'fasilitas' }">
                                     <a @click.prevent="scrollToSection('fasilitas')"
-                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-[#E8B5BA] transition duration-300 ease-in-out cursor-pointer">
+                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Fasilitas
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-[#E8B5BA] font-medium': activeSection === 'biaya-flow' }">
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'biaya-flow' }">
                                     <a @click.prevent="scrollToSection('biaya-flow')"
-                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-[#E8B5BA] transition duration-300 ease-in-out cursor-pointer">
+                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Biaya & Flow
                                     </a>
                                 </li>
@@ -70,15 +70,18 @@
                     </div>
                     <div class="flex items-center justify-end pr-10 lg:pr-0">
                         <a href="https://jimshoneyofficial.co.id" target="_blank"
-                            class="bg-[#E8B5BA] px-5 lg:py-2.5 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white">
-                            Go to Website
+                            class="bg-primaryColor px-5 lg:py-2.5 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white">
+                            <client-only>
+                                <font-awesome-icon :icon="['fas', 'cart-shopping']" class="text-[18px] mr-1" />
+                            </client-only>
+                            Order Sekarang
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="w-11 h-11 bg-[#E8B5BA] rounded-full p-2 flex items-center justify-center fixed right-5 bottom-5 cursor-pointer z-50 shadow-lg"
+    <div class="w-11 h-11 bg-primaryColor rounded-full p-2 flex items-center justify-center fixed right-5 bottom-5 cursor-pointer z-30 shadow-lg"
         @click.prevent="scrollToSection('home')" v-if="activeSection !== 'home'">
         <client-only>
             <font-awesome-icon :icon="['fa', 'angle-up']" class="text-2xl text-white" />

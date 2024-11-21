@@ -1,7 +1,7 @@
 <template>
     <div class="container lg:mt-24 mt-10 relative">
         <nuxt-img src="/images/kincir.webp" class="absolute lg:right-16 right-10 bottom-0"  title="" alt="" loading="lazy" />
-        <div class="bg-white border border-[#E8B5BA] rounded-xl lg:p-10 p-4 mb-4">
+        <div class="bg-white border border-primaryColor rounded-xl lg:p-10 p-4 mb-4">
             <h2 class="text-3xl font-bold">
                 Dapatkan informasi Jims Honey
             </h2>
@@ -18,13 +18,13 @@
                     </div>
                     <div class="font-light mt-2">
                         <client-only>
-                            <font-awesome-icon :icon="['fa', 'phone']" class="text-md mr-2 text-[#E8B5BA]" />
+                            <font-awesome-icon :icon="['fa', 'phone']" class="text-md mr-2 text-primaryColor" />
                         </client-only>
                         +62 813-8854-7228
                     </div>
                     <div class="font-light mt-2">
                         <client-only>
-                            <font-awesome-icon :icon="['fa', 'envelope']" class="text-md mr-2 text-[#E8B5BA]" />
+                            <font-awesome-icon :icon="['fa', 'envelope']" class="text-md mr-2 text-primaryColor" />
                         </client-only>
                         <a href="mailto:jimshoneypartnership@gmail.com">jimshoneypartnership@gmail.com</a>
                     </div>

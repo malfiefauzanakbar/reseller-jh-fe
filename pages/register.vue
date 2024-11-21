@@ -27,8 +27,6 @@ const Register = defineAsyncComponent(() =>
     import('~/components/Register.vue'),
 );
 
-const token = useCookie('token').value;
-console.log(token)
 </script>
 
 <style lang="scss"></style>

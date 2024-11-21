@@ -1,90 +1,109 @@
 <template>
-    <div class="flex justify-center mt-4">
-        <button @click="changePage(1)" :disabled="currentPage === 1"
-            class="px-0 py-0 mx-1 rounded disabled:opacity-50">
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 16-4-4 4-4m-6 8-4-4 4-4"/>
-            </svg>
-        </button>
-
-        <button @click="prevPage" :disabled="currentPage === 1"
-            class="px-0 py-0 mx-1 disabled:opacity-50">
-            <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-            </svg>
-        </button>
-
-        <button v-if="currentPage > 4" @click="changePage(1)" class="bg-neutral-700 px-2.5 py-1 mx-1 rounded-full">
-            1
-        </button>
-
-        <span v-if="currentPage > 4">...</span>
-
-        <button v-for="page in pages" :key="page" @click="changePage(page)"
-            :class="page === currentPage ? 'bg-[#b07f46] text-white' : 'bg-neutral-700'" class="w-7 h-7 mx-1 rounded-full">
-            {{ page }}
-        </button>
-
-        <span v-if="currentPage < lastPage - 3">...</span>
-
-        <button v-if="currentPage < lastPage - 3" @click="changePage(lastPage)"
-            class="w-7 h-7 mx-1 bg-neutral-700 rounded-full">
-            {{ lastPage }}
-        </button>
-
-        <button @click="nextPage" :disabled="currentPage === lastPage"
-            class="px-0 py-1 mx-1 rounded disabled:opacity-50">
-            <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-            </svg>
-        </button>
-
-        <button @click="changePage(lastPage)" :disabled="currentPage === lastPage"
-            class="px-0 py-0 mx-1 rounded disabled:opacity-50">
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 16 4-4-4-4m6 8 4-4-4-4"/>
-            </svg>
-        </button>
+    <div class="mt-3 flex items-center">
+        <p class="text-sm text-gray-600">
+            Menampilkan <span class="font-medium text-black">1-{{ pageSize }}</span> Data dari <span
+                class="font-medium text-black">{{ totalItem }}</span> Data
+        </p>
+        <div class="ms-auto flex items-center gap-4">
+            <div class="flex space-x-2">
+                <button class="w-8 h-8 bg-gray-200 rounded-full disabled:text-gray-400" :disabled="currentPage === 1"
+                    @click="goToPage(currentPage - 1)">
+                    <client-only>
+                        <font-awesome-icon :icon="['fas', 'angle-left']" class="text-[14px]" />
+                    </client-only>
+                </button>
+                <button v-for="page in pages" :key="page" :class="[
+                    'w-8 h-8 rounded-full',
+                    page === currentPage ? 'bg-primaryColor text-white shadow-md' : 'bg-gray-200',
+                    page === '...' ? 'cursor-default' : ''
+                ]" :disabled="page === '...'" @click="page !== '...' && goToPage(page)">
+                    {{ page }}
+                </button>
+                <button class="w-8 h-8 bg-gray-200 rounded-full disabled:text-gray-400" :disabled="currentPage === totalPages"
+                    @click="goToPage(currentPage + 1)">
+                    <client-only>
+                        <font-awesome-icon :icon="['fas', 'angle-right']" class="text-[14px]" />
+                    </client-only>
+                </button>
+            </div>
+            <div class="relative">
+                <select id="rows" name="rows" as="select"
+                    class="appearance-none block w-28 p-2 text-sm border rounded-lg bg-white" v-model="selectedPageSize"
+                    @change="updatePageSize">
+                    <option v-for="size in [10, 20, 30, 40, 50, 100]" :key="size" :value="size">
+                        {{ size }} Rows
+                    </option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+                    <client-only>
+                        <font-awesome-icon :icon="['fas', 'angle-down']" class="text-[14px]" />
+                    </client-only>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { computed, defineProps, defineEmits } from 'vue';
+import { ref, computed } from 'vue'
 
 const props = defineProps({
     currentPage: {
         type: Number,
-        required: true
+        required: true,
     },
-    lastPage: {
+    totalPages: {
         type: Number,
-        required: true
-    }
-});
+        required: true,
+    },
+    pageSize: {
+        type: Number,
+        required: true,
+    },
+    totalItem: {
+        type: Number,
+        required: true,
+    },
+})
 
-const emit = defineEmits(['pageChange']);
+const emit = defineEmits(['page-change'])
 
 const pages = computed(() => {
-    const range = 3;
-    const start = Math.max(props.currentPage - range, 1);
-    const end = Math.min(props.currentPage + range, props.lastPage);
+    const totalPages = props.totalPages;
+    const currentPage = props.currentPage;
+    const maxVisiblePages = 5;
 
-    return Array.from({ length: end - start + 1 }, (v, k) => start + k);
+    if (totalPages <= maxVisiblePages) {
+        return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    const pages = [];
+
+    if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, '...', totalPages);
+    } else if (currentPage >= totalPages - 2) {
+        pages.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+    } else {
+        pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
+    }
+
+    return pages;
 });
 
-const changePage = (page) => {
-    emit('pageChange', page);
-};
 
-const nextPage = () => {
-    if (props.currentPage < props.lastPage) {
-        changePage(props.currentPage + 1);
-    }
-};
+const selectedPageSize = ref(props.pageSize)
 
-const prevPage = () => {
-    if (props.currentPage > 1) {
-        changePage(props.currentPage - 1);
+const goToPage = (page) => {
+    if (page > 0 && page <= props.totalPages) {
+        emit('page-change', page)
     }
-};
+}
+
+const updatePageSize = () => {
+    emit('page-size-change', Number(selectedPageSize.value))
+}
 </script>
+
+
+<style scoped>
+</style>

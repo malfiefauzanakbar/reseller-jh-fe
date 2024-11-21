@@ -13,7 +13,9 @@
                 </div>
                 <input type="text"
                     class="block w-full px-4 py-2.5 ps-8 text-sm text-gray-900 border border-black rounded-lg bg-white ffocus:border-blue-500"
-                    placeholder="Cari berdasarkan nama dll." />
+                    placeholder="Cari berdasarkan nama dll."
+                    v-model="search"
+                />
             </div>
         </div>
         <div class="w-3/12">
@@ -22,7 +24,10 @@
         </div>
         <div>
             <button
-                class="bg-[#E8B5BA] px-5 py-2.5 rounded-lg font-medium transition-all text-white flex items-center gap-2">
+                class="bg-primaryColor px-5 py-2.5 rounded-lg font-medium transition-all text-white flex items-center gap-2 disabled:bg-gray-300"
+                @click="exportExcel()"
+                :disabled="date.length == 0"
+            >
                 <client-only>
                     <font-awesome-icon :icon="['fas', 'file-excel']" class="text-[18px]" />
                 </client-only>
@@ -30,7 +35,7 @@
             </button>
         </div>
     </div>
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
+    <div class="relative shadow-md sm:rounded-lg mt-4">
         <table class="w-full text-sm text-left rtl:text-right">
             <thead class="text-md text-gray-700 bg-gray-100">
                 <tr>
@@ -57,99 +62,190 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="bg-white border-b hover:bg-white text-gray-500">
+            <tbody v-if="lists.length > 0">
+                <tr class="bg-white border-b hover:bg-white text-gray-500" v-for="(list, index) in lists" :key="index">
                     <td class="px-6 py-3">
-                        1
+                        {{ (pagination.page - 1) * pagination.page_size + index + 1 }}.
+                    </td>
+                    <td class="px-6 py-3 capitalize">
+                        {{ list.fullname ? list.fullname : '-'  }}
                     </td>
                     <td class="px-6 py-3">
-                        Jhon Jhonson
+                        {{ list.whatsapp_no ? list.whatsapp_no : '-'  }}
                     </td>
                     <td class="px-6 py-3">
-                        08878787378
+                        {{ list.email ? list.email : '-'  }}
                     </td>
                     <td class="px-6 py-3">
-                        email@gmail.com
+                        {{ list.nik ? list.nik : '-'  }}
                     </td>
                     <td class="px-6 py-3">
-                        12981928198288
-                    </td>
-                    <td class="px-6 py-3">
-                        Jalan raya jalan jalan
+                        <div
+                            @mouseenter="list.isHover = true"
+                            @mouseleave="list.isHover = false"
+                            class="truncate w-[150px] cursor-pointer"
+                        >
+                            {{ list.address ? list.address : '-'  }}
+                        </div>
+                        <transition
+                            enter="transition ease-out duration-200"
+                            enter-from="opacity-0 scale-95"
+                            enter-to="opacity-100 scale-100"
+                            leave="transition ease-in duration-150"
+                            leave-from="opacity-100 scale-100"
+                            leave-to="opacity-0 scale-95"
+                        >
+                            <div
+                                v-if="list.isHover"
+                                class="absolute -translate-x-1/2 mt-2 px-3 py-2 bg-white text-black text-sm rounded-lg shadow-lg border border-gray-200"
+                                role="tooltip"
+                            >
+                                {{ list.address }}
+                            </div>
+                        </transition>
                     </td>
                     <td class="flex items-center px-6 py-3">
-                        <button class="text-green-500 underline">
-                            Chat Reseller
-                        </button>
-                    </td>
-                </tr>
-                <tr class="bg-white border-b hover:bg-white text-gray-500">
-                    <td class="px-6 py-3">
-                        2
-                    </td>
-                    <td class="px-6 py-3">
-                        Jhon Jhonson
-                    </td>
-                    <td class="px-6 py-3">
-                        08878787378
-                    </td>
-                    <td class="px-6 py-3">
-                        email@gmail.com
-                    </td>
-                    <td class="px-6 py-3">
-                        12981928198288
-                    </td>
-                    <td class="px-6 py-3">
-                        Jalan raya jalan jalan
-                    </td>
-                    <td class="flex items-center px-6 py-3">
-                        <button class="text-green-500 underline">
+                        <button :disabled="list.isLoading" class="text-green-500 underline disabled:text-gray-400" @click="readMessage(list)">
                             Chat Reseller
                         </button>
                     </td>
                 </tr>
             </tbody>
+            <tbody v-else>
+                <tr>
+                    <td colspan="7" class="text-center">
+                        <div class="p-4 text-xl text-gray-400">
+                            Data kosong
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
-    <div class="mt-3 flex items-center">
-        <p class="text-sm text-gray-600">
-            Menampilkan <span class="font-medium text-black">1-10</span> Data dari <span class="font-medium text-black">4</span> Data
-        </p>
-        <div class="ms-auto">
-            <div class="relative">
-                <select 
-                    id="payment_method"
-                    name="payment_method"
-                    as="select"
-                    class="appearance-none block w-28 p-2 text-sm border rounded-lg bg-white"
-                >
-                    <option value="">10 Rows</option>
-                    <option value="">20 Rows</option>
-                    <option value="">30 Rows</option>
-                    <option value="">40 Rows</option>
-                    <option value="">50 Rows</option>
-                    <option value="">100 Rows</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
-                    <client-only>
-                        <font-awesome-icon :icon="['fas', 'angle-down']" class="text-[14px]" />
-                    </client-only>
-                </div>
-            </div>
-        </div>
+    <div class="mt-4" v-if="lists.length > 0">
+        <Pagination
+            :currentPage="pagination.page"
+            :totalPages="pagination.total_pages"
+            :pageSize="pagination.page_size"
+            :totalItem="pagination.total_items"
+            @page-change="handlePageChange"
+            @page-size-change="handlePageSizeChange"
+        />
     </div>
 </template>
 
 <script setup>
-    import VueDatePicker from '@vuepic/vue-datepicker';
-    import '@vuepic/vue-datepicker/dist/main.css'
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
+import { ref, watch } from 'vue';
+import Pagination from '../Pagination.vue';
+import { useReadMessageStore } from '@/stores/read-message';
+import { saveAs } from 'file-saver';
 
-    const date = ref([]);
+const { $api, $moment } = useNuxtApp();
+const date = ref([]);
 
-    onMounted(() => {
-        const today = new Date();
-        date.value = [today, today];
-    })
+watch(date, (newValue, oldValue) => {
+    if (newValue !== oldValue) {
+        getLists()
+    }
+});
+const type = ref(1)
+const search = ref('');
+const pagination = ref({
+    page: 1,
+    page_size: 10,
+    total_pages: 0,
+    total_items: 0,
+});
+
+const lists = ref([])
+const getLists = async (page = 1) => {
+    try {
+        const start_date = date.value[0] ? $moment(date.value[0]).format('YYYY-MM-DD') : null;
+        const end_date = date.value[1] ? $moment(date.value[1]).format('YYYY-MM-DD') : null;
+
+        const response = await $api.get(`/reseller`, {
+            params: {
+                page: page,
+                page_size: pagination.value.page_size,
+                type: type.value,
+                keyword: search.value,
+                start_date,
+                end_date,
+            }
+        });
+
+        const data = response.data.data.map(item => ({
+            ...item,
+            isLoading: false,
+            isHover: false
+        }));
+
+        const paginate = response.data.pagination;
+        lists.value = data;
+        pagination.value = {
+            page: paginate.page,
+            page_size: paginate.page_size,
+            total_pages: paginate.total_pages,
+            total_items: paginate.total_items
+        };
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+watch(search, () => {
+    getLists();
+});
+
+const handlePageChange = (page) => {
+    pagination.value.page = page;
+    getLists(page)
+}
+
+const handlePageSizeChange = (newPageSize) => {
+    pagination.value.page_size = newPageSize;
+    pagination.value.page = 1;
+    getLists();
+};
+
+const readMessageStore = useReadMessageStore();
+const readMessage = async (message) => {
+    try {
+        await readMessageStore.readMessage(message);
+        await getLists()
+        await getCountReseller()
+    } catch (error) {
+        console.log(error)
+    }
+};
+
+const exportExcel = async () => {
+    try {
+        const start_date = date.value[0] ? $moment(date.value[0]).format('YYYY-MM-DD') : null;
+        const end_date = date.value[1] ? $moment(date.value[1]).format('YYYY-MM-DD') : null;
+
+        const response = await $api.get('/reseller/export/excel', {
+            params: {
+                start_date,
+                end_date,
+                type: type.value,
+            },
+        });
+        const currentDate = $moment().format('YYYY-MM-DD');
+        const filename = `${currentDate}_export.xlsx`;
+
+        saveAs(response.data.data.filename, filename);
+    } catch (err) {
+        console.log(err)
+
+    }
+}
+
+onMounted(() => {
+    getLists()
+})
 </script>
 
 <style scoped lang="scss"></style>

@@ -129,12 +129,15 @@ declare global {
   const useLazyAsyncData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']
   const useLazyFetch: typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']
   const useLink: typeof import('../../node_modules/vue-router')['useLink']
+  const useListStore: typeof import('../../stores/list')['useListStore']
   const useLoadingIndicator: typeof import('../../node_modules/nuxt/dist/app/composables/loading-indicator')['useLoadingIndicator']
   const useModel: typeof import('../../node_modules/vue')['useModel']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']
+  const useNuxtDevTools: typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']
   const usePinia: typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']
   const usePreviewMode: typeof import('../../node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']
+  const useReadMessageStore: typeof import('../../stores/read-message')['useReadMessageStore']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']
   const useRequestFetch: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']
   const useRequestHeader: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeader']
@@ -183,6 +186,7 @@ declare global {
   const useSubmitForm: typeof import('../../node_modules/vee-validate/dist/vee-validate')['useSubmitForm']
   const useTemplateRef: typeof import('../../node_modules/vue')['useTemplateRef']
   const useTransitionState: typeof import('../../node_modules/vue')['useTransitionState']
+  const useUpdateStatusStore: typeof import('../../stores/update-status')['useUpdateStatusStore']
   const useValidateField: typeof import('../../node_modules/vee-validate/dist/vee-validate')['useValidateField']
   const useValidateForm: typeof import('../../node_modules/vee-validate/dist/vee-validate')['useValidateForm']
   const watch: typeof import('../../node_modules/vue')['watch']
@@ -334,12 +338,15 @@ declare module 'vue' {
     readonly useLazyAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']>
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']>
     readonly useLink: UnwrapRef<typeof import('../../node_modules/vue-router')['useLink']>
+    readonly useListStore: UnwrapRef<typeof import('../../stores/list')['useListStore']>
     readonly useLoadingIndicator: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/loading-indicator')['useLoadingIndicator']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
+    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePinia: UnwrapRef<typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
+    readonly useReadMessageStore: UnwrapRef<typeof import('../../stores/read-message')['useReadMessageStore']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']>
     readonly useRequestFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']>
     readonly useRequestHeader: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeader']>
@@ -388,6 +395,7 @@ declare module 'vue' {
     readonly useSubmitForm: UnwrapRef<typeof import('../../node_modules/vee-validate/dist/vee-validate')['useSubmitForm']>
     readonly useTemplateRef: UnwrapRef<typeof import('../../node_modules/vue')['useTemplateRef']>
     readonly useTransitionState: UnwrapRef<typeof import('../../node_modules/vue')['useTransitionState']>
+    readonly useUpdateStatusStore: UnwrapRef<typeof import('../../stores/update-status')['useUpdateStatusStore']>
     readonly useValidateField: UnwrapRef<typeof import('../../node_modules/vee-validate/dist/vee-validate')['useValidateField']>
     readonly useValidateForm: UnwrapRef<typeof import('../../node_modules/vee-validate/dist/vee-validate')['useValidateForm']>
     readonly watch: UnwrapRef<typeof import('../../node_modules/vue')['watch']>

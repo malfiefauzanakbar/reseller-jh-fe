@@ -1,4 +1,5 @@
 <template>
+    <LoadingScreen :isVisible="loadingData" />
     <section class="bg-gradient-to-b from-[#F6E2E5] to-[#fff] relative" id="home">
         <div class="container lg:pt-[200px] pt-20 z-10 relative">
             <nuxt-img src="/images/butterfly.webp" class="absolute right-[500px] lg:block hidden" title="" alt=""
@@ -8,97 +9,34 @@
                     <h1 class="lg:text-6xl text-4xl font-bold lg:text-left text-center">
                         <span class=" lg:block">Pendaftaran</span>
                         <span class="lg:block lg:mt-1 ">
-                            Reseller <span class="bg-[#E8B5BA] inline-block p-0">Jims Honey</span>
+                            {{ detail?.banner_title }}
+                            <!-- Reseller <span class="bg-primaryColor inline-block p-0">Jims Honey</span> -->
                         </span>
                     </h1>
                     <p class="mt-5 text-gray-600 lg:text-start text-center">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate, ipsam labore id
-                        aut veniam numquam, quidem obcaecati temporibus
+                        {{ detail?.short_description }}
                     </p>
                     <div class="mb-6 lg:mt-12 mt-6">
                         <div
-                            class="bg-white px-4 py-2.5 lg:w-56 w-full border-b-2 border-[#E8B5BA] rounded-t-lg text-[#E8B5BA] font-medium text-center">
+                            class="bg-white px-4 py-2.5 lg:w-56 w-full border-b-2 border-primaryColor rounded-t-lg text-primaryColor font-medium text-center">
                             Daftar Reseller
                         </div>
                         <div
                             class="bg-white lg:p-6 p-4 shadow-[5px_7px_21px_-3px_rgba(0,_0,_0,_0.1)] rounded-b-lg lg:rounded-tr-lg">
-                            <div class="lg:flex gap-4">
-                                <div class="flex lg:w-[250px]">
-                                    <label for="upload"
-                                        class="flex flex-col items-center justify-center w-full h-44 rounded-lg border-2 border-dashed border-[#E8B5BA] bg-[#F8E9EA] text-center cursor-pointer">
-                                        <div class="text-pink-300 mb-4">
-                                            <client-only>
-                                                <font-awesome-icon :icon="['fa', 'plus-circle']"
-                                                    class="text-3xl text-[#E8B5BA]" />
-                                            </client-only>
-                                        </div>
-                                        <p class="text-black font-medium">Upload KTP</p>
-                                        <p class="text-gray-500">Note: max 2 mb</p>
-                                        <input type="file" id="upload" class="hidden" />
-                                    </label>
-                                </div>
-                                <div class="w-full lg:mt-0 mt-3">
-                                    <div class="lg:grid grid-cols-2 gap-4">
-                                        <div class="relative">
-                                            <input type="text" id="floating_name" autocomplete="off"
-                                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                                placeholder="" />
-                                            <label for="floating_name"
-                                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                                Nama Lengkap
-                                            </label>
-                                        </div>
-                                        <div class="relative lg:mt-0 mt-3">
-                                            <input type="text" id="floating_wa" autocomplete="off"
-                                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                                placeholder="" />
-                                            <label for="floating_wa"
-                                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                                No Whatsapp
-                                            </label>
-                                        </div>
-                                        <div class="relative lg:mt-0 mt-3">
-                                            <input type="email" id="floating_email" autocomplete="off"
-                                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                                placeholder="" />
-                                            <label for="floating_email"
-                                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                                Email
-                                            </label>
-                                        </div>
-                                        <div class="relative lg:mt-0 mt-3">
-                                            <input type="text" id="floating_nik" autocomplete="off"
-                                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                                placeholder="" />
-                                            <label for="floating_nik"
-                                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                                NIK
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="relative mt-4">
-                                        <input type="text" id="floating_address" autocomplete="off"
-                                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                            placeholder="" />
-                                        <label for="floating_address"
-                                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                            Alamat
-                                        </label>
-                                    </div>
-                                    <div class="mt-4">
-                                        <button
-                                            class="bg-[#E8B5BA] w-full py-3 rounded-lg font-medium shadow-md shadow-gray-300 text-white">Kirim
-                                            Data</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <RegisSection />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <nuxt-img src="/images/talent.webp" class="absolute bottom-0 right-0 z-0 lg:block hidden" width="550" title=""
-            alt="" loading="lazy" />
+        <nuxt-img
+            :src="detail?.banner_image" 
+            class="absolute bottom-0 right-0 z-0 lg:block hidden"
+            width="550" 
+            title="talent"
+            alt="talent"
+            loading="lazy"
+        />
     </section>
     <section class="relative" id="journey">
         <nuxt-img src="/images/daun-1.webp" class="absolute lg:block hidden left-0 top-0 " width="100" title="" alt=""
@@ -107,12 +45,11 @@
             loading="lazy" />
         <div class="container lg:mt-16 mt-10">
             <h2 class="text-3xl font-bold text-center">
-                Journey Jims Honey
+                {{ detail?.journey_title }}
             </h2>
             <div class="flex items-center justify-center">
                 <p class="text-center mt-3 text-[#737373] lg:w-[600px] font-light">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa
-                    volutpat.
+                    {{ detail?.journey_description }}
                 </p>
             </div>
             <div class="slider-item mt-6">
@@ -138,16 +75,15 @@
         <div class="container lg:mt-16 mt-10 relative">
             <nuxt-img src="/images/butterfly-3.webp" class="absolute lg:block hidden right-0 top-0" title="" alt="" loading="lazy" />
             <h2 class="text-3xl font-bold text-center">
-                Video Jims Honey
+                {{ detail?.video_title }}
             </h2>
             <div class="flex justify-center items-center">
                 <p class="mt-3 text-[#737373] lg:w-[600px] font-light text-center">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa
-                    volutpat.
+                    {{ detail?.video_description }}
                 </p>
             </div>
             <div class="flex items-center justify-center">
-                <div class="bg-[#E8B5BA] rounded-2xl shadow-pink mt-6 w-[500px]">
+                <div class="bg-primaryColor rounded-2xl shadow-pink mt-6 w-[500px]">
                     <video class="w-full rounded-2xl aspect-[16/10] object-cover" controls preload="auto" poster="/images/store.webp">
                         <source src="/videos/video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
@@ -159,12 +95,11 @@
             <nuxt-img src="/images/butterfly-1.webp" class="absolute lg:block hidden lg:left-0 lg:top-[20px]" width="70" title="" alt=""
                 loading="lazy" />
             <h2 class="text-3xl font-bold text-center">
-                Store Jims Honey Indonesia
+                {{ detail?.store_title }}
             </h2>
             <div class="flex items-center justify-center">
                 <p class="text-center mt-3 text-[#737373] lg:w-[600px] font-light">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa
-                    volutpat.
+                    {{ detail?.store_description }}
                 </p>
             </div>
             <div class="slider-item mt-6">
@@ -191,16 +126,15 @@
             <nuxt-img src="/images/daun-2.webp" class="absolute lg:block hidden -right-[80px] -top-[120px] z-0" width="350" title=""
                 alt="" loading="lazy" />
             <h2 class="text-3xl font-bold text-center">
-                Reseller Tier
+                {{ detail?.tier_title }}
             </h2>
             <div class="flex items-center justify-center">
                 <p class="text-center mt-3 text-[#737373] lg:w-[600px] font-light">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa
-                    volutpat.
+                    {{ detail?.tier_description }}
                 </p>
             </div>
             <div class="lg:grid grid-cols-4 gap-4 mt-6 z-10 relative">
-                <div class="bg-[#E8B5BA] rounded-xl p-6 shadow-md shadow-gray-300">
+                <div class="bg-primaryColor rounded-xl p-6 shadow-md shadow-gray-300">
                     <div class="flex items-center gap-4">
                         <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2">
                             <nuxt-img src="/images/rubby.webp" title="" alt="" loading="lazy" />
@@ -240,14 +174,14 @@
                             </h3>
                         </div>
                     </div>
-                    <p class="lg:mt-6 mt-3 text-sm">
+                    <p class="lg:mt-6 mt-3 text-sm font-light">
                         Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.
                     </p>
                     <h2 class="text-3xl mt-6 font-bold">
                         Rp.800.000
                     </h2>
                     <div class="lg:mt-20 mt-6">
-                        <button class="bg-white border border-[#E8B5BA] rounded-full py-3.5 w-full font-medium">
+                        <button class="bg-white border border-primaryColor rounded-full py-3.5 w-full font-medium">
                             Vew Detail
                         </button>
                     </div>
@@ -266,14 +200,14 @@
                             </h3>
                         </div>
                     </div>
-                    <p class="lg:mt-6 mt-3 text-sm">
+                    <p class="lg:mt-6 mt-3 text-sm font-light">
                         Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.
                     </p>
                     <h2 class="text-3xl mt-6 font-bold">
                         Rp.800.000
                     </h2>
                     <div class="lg:mt-20 mt-6">
-                        <button class="bg-white border border-[#E8B5BA] rounded-full py-3.5 w-full font-medium">
+                        <button class="bg-white border border-primaryColor rounded-full py-3.5 w-full font-medium">
                             Vew Detail
                         </button>
                     </div>
@@ -292,14 +226,14 @@
                             </h3>
                         </div>
                     </div>
-                    <p class="lg:mt-6 mt-3 text-sm">
+                    <p class="lg:mt-6 mt-3 text-sm font-light">
                         Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.
                     </p>
                     <h2 class="text-3xl mt-6 font-bold">
                         Rp.800.000
                     </h2>
                     <div class="lg:mt-20 mt-6">
-                        <button class="bg-white border border-[#E8B5BA] rounded-full py-3.5 w-full font-medium">
+                        <button class="bg-white border border-primaryColor rounded-full py-3.5 w-full font-medium">
                             Vew Detail
                         </button>
                     </div>
@@ -312,12 +246,11 @@
             <nuxt-img src="/images/butterfly-1.webp" class="absolute lg:block hidden left-[100px] top-0" title="" alt=""
                 loading="lazy" />
             <h2 class="text-3xl font-bold text-center">
-                Fasilitas
+                {{ detail?.facility_title }}
             </h2>
             <div class="flex items-center justify-center">
                 <p class="text-center mt-3 text-[#737373] lg:w-[600px] font-light">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa
-                    volutpat.
+                    {{ detail?.facility_description }}
                 </p>
             </div>
             <div class="grid lg:grid-cols-4 grid-cols-2 gap-4 mt-6">
@@ -336,7 +269,7 @@
         <div class="container relative">
             <nuxt-img src="/images/butterfly-3.webp" class="absolute lg:block hidden right-0 top-0" title="" alt="" loading="lazy" />
             <div class="lg:grid grid-cols-3 gap-16">
-                <div class=" bg-[#E8B5BA] rounded-2xl p-6 relative z-10 shadow-pink">
+                <div class=" bg-primaryColor rounded-2xl p-6 relative z-10 shadow-pink">
                     <h2 class="text-xl font-medium">
                         <span class="bg-white inline-block px-2 rounded-sm">
                             Promo Spesial
@@ -440,7 +373,7 @@
         </div>
     </section>
     <!-- MODAL -->
-    <div v-if="isOpenModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 lg:p-0 p-2">
+    <div v-if="isOpenModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-40 lg:p-0 p-2">
         <div class="bg-white lg:rounded-3xl rounded-xl shadow-lg lg:p-6 p-4 max-w-2xl w-full shadow-modal">
             <div class="flex">
                 <div>
@@ -457,76 +390,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:flex gap-4 lg:mt-6 mt-3">
-                <div class="flex lg:w-[250px]">
-                    <label for="upload"
-                        class="flex flex-col items-center justify-center w-full h-44 rounded-lg border-2 border-dashed border-[#E8B5BA] bg-[#F8E9EA] text-center cursor-pointer">
-                        <div class="text-pink-300 mb-4">
-                            <client-only>
-                                <font-awesome-icon :icon="['fa', 'plus-circle']"
-                                    class="text-3xl text-[#E8B5BA]" />
-                            </client-only>
-                        </div>
-                        <p class="text-black font-medium">Upload KTP</p>
-                        <p class="text-gray-500">Note: max 2 mb</p>
-                        <input type="file" id="upload" class="hidden" />
-                    </label>
-                </div>
-                <div class="w-full">
-                    <div class="lg:grid grid-cols-2 gap-4">
-                        <div class="relative lg:mt-0 mt-3">
-                            <input type="text" id="floating_name" autocomplete="off"
-                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder="" />
-                            <label for="floating_name"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                Nama Lengkap
-                            </label>
-                        </div>
-                        <div class="relative lg:mt-0 mt-3">
-                            <input type="text" id="floating_wa" autocomplete="off"
-                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder="" />
-                            <label for="floating_wa"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                No Whatsapp
-                            </label>
-                        </div>
-                        <div class="relative lg:mt-0 mt-3">
-                            <input type="email" id="floating_email" autocomplete="off"
-                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder="" />
-                            <label for="floating_email"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                Email
-                            </label>
-                        </div>
-                        <div class="relative lg:mt-0 mt-3">
-                            <input type="text" id="floating_nik" autocomplete="off"
-                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder="" />
-                            <label for="floating_nik"
-                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                NIK
-                            </label>
-                        </div>
-                    </div>
-                    <div class="relative lg:mt-4 mt-3">
-                        <input type="text" id="floating_address" autocomplete="off"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder="" />
-                        <label for="floating_address"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                            Alamat
-                        </label>
-                    </div>
-                    <div class="mt-4">
-                        <button
-                            class="bg-[#E8B5BA] w-full py-3 rounded-lg font-medium shadow-md shadow-gray-300 text-white">Kirim
-                            Data</button>
-                    </div>
-                </div>
-            </div>
+            <RegisModal />
         </div>
     </div>
 </template>
@@ -536,8 +400,13 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 import { useScrollToSection } from '~/composables/useScrollToSection';
 import { ref, onMounted } from 'vue';
+import RegisModal from './form/RegisModal.vue';
+import RegisSection from './form/RegisSection.vue';
+import LoadingScreen from './LoadingScreen.vue';
 
-const isOpenModal = ref(false);
+const { $api } = useNuxtApp();
+
+const isOpenModal = ref(true);
 
 onMounted(() => {
     isOpenModal.value = true;
@@ -584,6 +453,26 @@ const breakpoints = ref({
         itemsToShow: 3,
         snapAlign: 'start',
     },
+})
+
+const detail = ref(null)
+const loadingData = ref(true)
+
+const getDetail = async () => {
+    loadingData.value = true
+    try {
+        const response = await $api.get(`/homepage`);
+        const data = response.data.data
+        detail.value = data
+        loadingData.value = false
+    } catch (error) {
+        loadingData.value = false
+        console.log(error);
+    }
+};
+
+onMounted(() => {
+    getDetail()
 })
 </script>
 

@@ -33,11 +33,11 @@
                                     src="/public/images/logo-no-title.webp"
                                     alt="user photo">
                                     <div class="text-left">
-                                        <p class="text-sm font-medium leading-4">
-                                            Jhon Jontor
+                                        <p class="text-sm font-medium leading-4 capitalize">
+                                            {{ authStore.getUsername }}
                                         </p>
                                         <p class="text-xs text-gray-400">
-                                            Super Admin
+                                            {{ authStore.getEmail }}
                                         </p>
                                     </div>
                                 </MenuButton>
@@ -45,7 +45,10 @@
                                     class="absolute right-2 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-10 px-2 py-1.5"
                                 >
                                     <MenuItem>
-                                        <button class="text-red-500 w-full text-left hover:bg-red-50 p-2 rounded-md">
+                                        <button 
+                                            class="text-red-500 w-full text-left hover:bg-red-50 p-2 rounded-md"
+                                            @click="() => { authStore.logout() }"
+                                        >
                                             Kelaur
                                         </button>
                                     </MenuItem>
@@ -85,7 +88,7 @@
             <ul class="space-y-4 font-normal">
                 <li>
                     <NuxtLink to="/dashboard"
-                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-[#E8B5BA]"
+                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-primaryColor"
                         :class="{ active: isActiveRoute('/dashboard') }"
                     >
                         <client-only>
@@ -96,7 +99,7 @@
                 </li>
                 <li>
                     <NuxtLink to="/dashboard/user-unread"
-                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-[#E8B5BA]"
+                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-primaryColor"
                         :class="{ active: isActiveRoute('/dashboard/user-unread') }"
                     >
                         <client-only>
@@ -107,7 +110,7 @@
                 </li>
                 <li>
                     <NuxtLink to="/dashboard/user-read"
-                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-[#E8B5BA]"
+                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-primaryColor"
                         :class="{ active: isActiveRoute('/dashboard/user-read') }"
                     >
                         <client-only>
@@ -118,7 +121,7 @@
                 </li>
                 <li>
                     <NuxtLink to="/dashboard/setup-homepage"
-                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-[#E8B5BA]"
+                        class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-primaryColor"
                         :class="{ active: isActiveRoute('/dashboard/setup-homepage') }"
                     >
                         <client-only>
@@ -135,8 +138,11 @@
 <script setup>
     import { useRoute } from 'vue-router'
     import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+    import { useAuthStore } from '@/stores/auth';
 
+    const authStore = useAuthStore();
     const route = useRoute()
+
     const isActiveRoute = (path) => {
         return route.path === path
     }

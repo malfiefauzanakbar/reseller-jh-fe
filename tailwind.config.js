@@ -17,6 +17,9 @@ export default {
         xl: "1280px",
         "2xl": "1536px",
       },
+      colors: {
+        primaryColor: '#E8B5BA',
+      },
     },
     container: {
       center: true,

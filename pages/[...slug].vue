@@ -7,18 +7,18 @@
         <div class="h-screen overflow-x-hidden relative">
             <div class="flex h-screen items-center justify-center p-4 z-20">
                 <div class="p-6 rounded-xl lg:w-1/3 w-full text-center">
-                    <h2 class="text-[200px] font-semibold text-[#E8B5BA] leading-404 outline-4">
+                    <h2 class="lg:text-[200px] text-[150px] font-semibold text-primaryColor leading-404 outline-4">
                         4<span class="text-[#f5dfe3]">0</span>4
                     </h2>
-                    <h3 class="text-3xl font-medium text-[#e8b5ba]">
-                        Halaman Tidak Ditemukan
+                    <h3 class="text-xl font-light text-primaryColor">
+                        Maaf, Halaman yang kamu cari Tidak Ditemukan
                     </h3>
                     <div class="mt-8 flex items-center justify-center">
-                        <NuxtLink to="/" class="bg-[#E8B5BA] border border-black py-3 px-6 rounded-lg shadow-md flex items-center justify-center">
-                            Kembali Kehalaman Sebelumnya
+                        <NuxtLink to="/" class="bg-primaryColor border border-black py-3 px-6 rounded-lg shadow-md flex items-center justify-center">
                             <client-only>
-                                <font-awesome-icon :icon="['fas', 'arrow-right']" class="text-[18px] ml-2" />
+                                <font-awesome-icon :icon="['fas', 'arrow-left']" class="text-[18px] mr-2" />
                             </client-only>
+                            Kembali ke Beranda
                         </NuxtLink>
                     </div>
                 </div>

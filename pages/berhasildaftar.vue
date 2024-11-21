@@ -1,5 +1,5 @@
 <template>
-    <Dashboard />
+    <ThankyouPage />
 </template>
 
 <script setup>
@@ -11,7 +11,7 @@ const runtimeConfig = useRuntimeConfig();
 const route = useRoute()
 const baseUrl = runtimeConfig.public.apiBaseUrl
 useHead({
-    title: 'Dashboard Reseller',
+    title: 'Terimakasih sudah mendaftar',
     link: [
         {
             rel: 'canonical',
@@ -19,13 +19,13 @@ useHead({
         }
     ],
 })
-definePageMeta({
-    layout: 'dashboard',
-    middleware: 'auth'
-})
-const Dashboard = defineAsyncComponent(() =>
-    import('~/components/dashboard/Home'),
-);
-</script>
 
-<style lang="scss"></style>
+definePageMeta({
+    layout: 'blank',
+})
+
+const ThankyouPage = defineAsyncComponent(() =>
+    import('~/components/ThankyouPage.vue'),
+);
+
+</script>

@@ -141,9 +141,9 @@
                 <div class="lg:w-10/12">
                     <div class="lg:flex items-center justify-center gap-6">
                         <div
-                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px]">
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group">
                             <div
-                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-[320px] lg:h-[250px]">
                                 <div>
                                     <div
                                         class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">
@@ -155,9 +155,9 @@
                                 width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
                         <div
-                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
                             <div
-                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-[320px] lg:h-[250px]">
                                 <div>
                                     <div
                                         class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">
@@ -169,9 +169,9 @@
                                 width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
                         <div
-                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
                             <div
-                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-[320px] lg:h-[250px]">
                                 <div>
                                     <div
                                         class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">
@@ -185,9 +185,9 @@
                     </div>
                     <div class="lg:flex items-center justify-center gap-6 mt-6">
                         <div
-                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
                             <div
-                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-[320px] lg:h-[250px]">
                                 <div>
                                     <div
                                         class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">
@@ -199,9 +199,9 @@
                                 width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
                         <div
-                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
                             <div
-                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-[320px] lg:h-[250px]">
                                 <div>
                                     <div
                                         class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">

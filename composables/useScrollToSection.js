@@ -17,7 +17,7 @@ export function useScrollToSection() {
     }
 
     function observeSections() {
-        const sections = ['home', 'journey', 'fasilitas', 'biaya-flow'];
+        const sections = ['home', 'information', 'register'];
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {

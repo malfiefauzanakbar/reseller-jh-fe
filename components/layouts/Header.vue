@@ -44,35 +44,35 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'journey' }">
-                                    <a @click.prevent="scrollToSection('journey')"
+                                <li class="group relative lg:block hidden"
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'information' }">
+                                    <a @click.prevent="scrollToSection('information')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Informasi
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'fasilitas' }">
-                                    <a @click.prevent="scrollToSection('fasilitas')"
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'register' }">
+                                    <a @click.prevent="scrollToSection('register')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
-                                        Fasilitas
+                                        Daftar
                                     </a>
                                 </li>
-                                <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'biaya-flow' }">
-                                    <a @click.prevent="scrollToSection('biaya-flow')"
+                                <!-- <li class="group relative"
+                                    :class="{ 'text-primaryColor font-medium': activeSection === 'register' }">
+                                    <a @click.prevent="scrollToSection('register')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Biaya & Flow
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
                     <div class="flex items-center justify-end pr-10 lg:pr-0">
                         <a href="https://jimshoneyofficial.co.id" target="_blank"
-                            class="bg-primaryColor px-5 lg:py-2.5 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white">
+                            class="bg-primaryColor lg:px-5 px-3 lg:py-2.5 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white lg:text-base text-sm">
                             <client-only>
-                                <font-awesome-icon :icon="['fas', 'cart-shopping']" class="text-[18px] mr-1" />
+                                <font-awesome-icon :icon="['fas', 'cart-shopping']" class="lg:text-[18px] text-sm mr-1" />
                             </client-only>
                             Order Sekarang
                         </a>

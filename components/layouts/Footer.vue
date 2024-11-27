@@ -2,10 +2,10 @@
     <div class="container lg:mt-24 mt-10 relative">
         <nuxt-img src="/images/kincir.webp" class="absolute lg:right-16 right-10 bottom-0"  title="" alt="" loading="lazy" />
         <div class="bg-white border border-primaryColor rounded-xl lg:p-10 p-4 mb-4">
-            <h2 class="text-3xl font-bold">
-                Dapatkan informasi Jims Honey
+            <h2 class="lg:text-3xl text-xl font-bold">
+                Informasi Jims Honey
             </h2>
-            <p class="mt-2 font-light">
+            <p class="mt-2 font-light lg:text-base text-sm">
                 Got questions about the Landing Page UI Kit? Our team is here to help. Contact us for quick and friendly support.
             </p>
             <div class="lg:grid grid-cols-3 gap-10 lg:mt-10 mt-5">
@@ -13,16 +13,16 @@
                     <h2 class="text-lg mb-4">
                         Kontak Kami
                     </h2>
-                    <div class="font-light mb-4">
+                    <div class="font-light mb-4 lg:text-base text-sm">
                         Ruko Grand Galaxy City RGK 582, Jaka Setia, Bekasi Selatan, West Java 17141
                     </div>
-                    <div class="font-light mt-2">
+                    <div class="font-light mt-2 lg:text-base text-sm">
                         <client-only>
                             <font-awesome-icon :icon="['fa', 'phone']" class="text-md mr-2 text-primaryColor" />
                         </client-only>
                         +62 813-8854-7228
                     </div>
-                    <div class="font-light mt-2">
+                    <div class="font-light mt-2 lg:text-base text-sm">
                         <client-only>
                             <font-awesome-icon :icon="['fa', 'envelope']" class="text-md mr-2 text-primaryColor" />
                         </client-only>

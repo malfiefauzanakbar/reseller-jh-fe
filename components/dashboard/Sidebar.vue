@@ -119,7 +119,7 @@
                         <span class="ms-3">User Sudah Dichat</span>
                     </NuxtLink>
                 </li>
-                <li>
+                <!-- <li>
                     <NuxtLink to="/dashboard/setup-homepage"
                         class="flex items-center p-2.5 text-gray-700 rounded-lg  hover:bg-[#FCF9FF] hover:text-primaryColor"
                         :class="{ active: isActiveRoute('/dashboard/setup-homepage') }"
@@ -129,7 +129,7 @@
                         </client-only>
                         <span class="ms-3">Setting Home Page</span>
                     </NuxtLink>
-                </li>
+                </li> -->
             </ul>
         </div>
     </aside>

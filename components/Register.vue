@@ -1,12 +1,8 @@
 <template>
-    <div class="h-screen bg-[#FAF4F8] relative">
-        <nuxt-img src="/images/kincir.webp" class="absolute lg:right-16 right-1 bottom-0"  title="" alt="" loading="lazy" />
-        <nuxt-img src="/images/butterfly-1.webp" class="absolute lg:left-32 right-10 top-24" width="60" title="" alt=""
-                loading="lazy" />
-        <nuxt-img src="/images/daun-1.webp" class="absolute left-0 top-0" width="100" title="" alt="" loading="lazy" />
+    <div class="h-screen bg-[#FAF4F8] relative lg:py-0 py-6">
         <div class="h-screen overflow-x-hidden relative">
             <Form @submit="submitRegister" :validation-schema="schema" v-slot="{ errors }">
-                <div class="flex h-screen items-center justify-center p-4 z-20">
+                <div class="flex h-screen items-center justify-center lg:p-4 p-6 z-20">
                     <div class="lg:p-6 p-0 rounded-xl lg:w-1/3 w-full">
                         <div class="flex items-center justify-center">
                             <nuxt-img src="/images/logo.webp" width="70" title="" alt=""

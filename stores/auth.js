@@ -14,7 +14,7 @@ export const useAuthStore = defineStore("auth", {
     email: "",
     usernameRegis: "",
     passwordRegis: "",
-    confirmPasswordRegis: ""
+    confirmPasswordRegis: "",
   }),
   getters: {
     getUsername: () => useCookie("username").value || "",
@@ -68,17 +68,14 @@ export const useAuthStore = defineStore("auth", {
       if (email) payload.email = email;
       if (username) payload.username = username;
       if (password) payload.password = password;
-      if (password_confirmation) payload.password_confirmation = password_confirmation;
+      if (password_confirmation)
+        payload.password_confirmation = password_confirmation;
       try {
-        const response = await api.post(
-          `/register`,
-          payload,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await api.post(`/register`, payload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         this.isRegis = false;
         router.push("/login");
       } catch (error) {

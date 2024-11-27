@@ -1,5 +1,4 @@
 import Critters from "critters-webpack-plugin";
-import compress from '@fastify/compress';
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
@@ -89,7 +88,6 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "vue3-carousel-nuxt",
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@pinia/nuxt",
@@ -105,23 +103,5 @@ export default defineNuxtConfig({
     prefetch: true,
     download: true,
   },
-  carousel: {
-    prefix: "MyPrefix",
-  },
   buildModules: ["nuxt-windicss"],
-  nitro: {
-    hooks: {
-        'nitro:config': (nitroConfig) => {
-          nitroConfig.plugins.push({
-            setup(app) {
-              app.use(compress());
-            },
-          });
-        },
-      },
-    compressPublicAssets: true,
-    prerender: {
-      routes: ["/404"],
-    },
-  },
 });

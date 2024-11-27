@@ -1,30 +1,35 @@
 <template>
     <LoadingScreen :isVisible="loadingData" />
-    <section class="bg-gradient-to-b from-[#F6E2E5] to-[#fff] relative lg:h-[600px]" id="home">
-        <div class="container lg:pt-[200px] pt-24 z-10 relative">
-            <div class="lg:grid grid-cols-3">
-                <div class="col-span-2">
-                    <h1 class="lg:text-6xl text-4xl font-bold lg:text-start text-center text-primaryColor">
-                        Program Reseller Jims Honey
-                    </h1>
-                    <p class="mt-5 text-gray-600 lg:text-base text-sm lg:text-start text-center lg:w-2/3">
-                        Mulai bisnis fashion dari sekarang dan rasakan keuntungannya di masa mendatang bersama Jims
-                        Honey!
-                    </p>
-                    <div class="lg:mt-10 mt-4 lg:text-start text-center">
-                        <button @click.prevent="scrollToSection('register')"
-                            class="bg-primaryColor lg:px-6 px-4 lg:py-4 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white">
-                            <client-only>
-                                <font-awesome-icon :icon="['fas', 'file-import']" class="text-[18px] mr-1.5" />
-                            </client-only>
-                            Daftar Sekarang
-                        </button>
-                    </div>
+    <section class="bg-gradient-to-b from-[#F6E2E5] to-[#fff] relative" id="home">
+        <div class="container lg:pt-[150px] pt-20 z-10 relative lg:h-[600px]">
+            <div class="lg:w-7/12">
+                <h1 class="lg:text-6xl text-4xl font-bold lg:text-start text-center text-primaryColor">
+                    Daftar Program Reseller Jims Honey Sekarang Juga
+                </h1>
+                <p class="mt-5 text-gray-600 lg:text-base text-sm lg:text-start text-center lg:w-2/3">
+                    Mulai bisnis fashion dari sekarang dan rasakan keuntungannya di masa mendatang bersama Jims
+                    Honey!
+                </p>
+                <div class="lg:mt-10 mt-4 lg:text-start text-center">
+                    <button @click.prevent="scrollToSection('register')"
+                        class="bg-primaryColor lg:px-6 px-4 lg:py-4 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white">
+                        <client-only>
+                            <font-awesome-icon :icon="['fas', 'file-import']" class="text-[18px] mr-1.5" />
+                        </client-only>
+                        Daftar Sekarang
+                    </button>
                 </div>
             </div>
+            <nuxt-img src="/images/talent.png" class="absolute bottom-0 right-0 z-0 lg:block hidden" width="600"
+                title="talent" alt="talent" loading="lazy" />
+            <button
+                class="w-11 h-11 bg-white hover:bg-gray-50 border border-gray-200 lg:flex items-center justify-center rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce hidden"
+                @click.prevent="scrollToSection('information')">
+                <client-only>
+                    <font-awesome-icon :icon="['fas', 'angles-down']" class="text-[20px]" />
+                </client-only>
+            </button>
         </div>
-        <nuxt-img src="/images/talent.png" class="absolute bottom-0 right-28 z-0 lg:block hidden" width="600"
-            title="talent" alt="talent" loading="lazy" />
     </section>
     <section class="relative" id="information">
         <div class="container lg:mt-16 mt-10">
@@ -36,9 +41,9 @@
             <div class="max-w-5xl mx-auto lg:py-10 py-6 lg:mt-6">
                 <div class="relative">
                     <div class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center">
-                        <div class="lg:h-40 h-20"></div>
-                        <div class="flex-1 border-l-[1px] border-dashed border-gray-200"></div>
-                        <div class="lg:h-40 h-20"></div>
+                        <div class="lg:h-40 h-16"></div>
+                        <div class="flex-1 border-l-[1px] border-dashed border-gray-300"></div>
+                        <div class="lg:h-40 h-16"></div>
                     </div>
                     <div class="relative flex items-center mb-0">
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
@@ -80,7 +85,8 @@
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
                             <p class="text-gray-800 lg:text-lg text-xs">
-                                Hanya dengan minimal belanja <span class="line-through">1.000.000 Rp500.000</span>
+                                Hanya dengan minimal belanja <span class="line-through">1.000.000</span> <span
+                                    class="font-medium">Rp500.000</span>
                                 seller sudah bisa mendapat proyeksi keuntungan hingga 10% - 30%.
                             </p>
                         </div>
@@ -114,7 +120,7 @@
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
                             <p class="text-gray-800 lg:text-lg text-xs">
-                                Jims Honey telah berkolaborasi dengan artis dan influencer tanag air.
+                                Jims Honey telah berkolaborasi dengan artis dan influencer tanah air.
                             </p>
                         </div>
                         <div
@@ -134,7 +140,8 @@
             <div class="lg:flex items-center justify-center lg:mt-10 mt-6">
                 <div class="lg:w-10/12">
                     <div class="lg:flex items-center justify-center gap-6">
-                        <div class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px]">
+                        <div
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px]">
                             <div
                                 class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                 <div>
@@ -144,10 +151,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out" width="320" height="250" src="/images/sample.webp"
-                                title="talent" alt="talent" />
+                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
-                        <div class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                        <div
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
                             <div
                                 class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                 <div>
@@ -157,10 +165,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out" width="320" height="250" src="/images/sample.webp"
-                                title="talent" alt="talent" />
+                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
-                        <div class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                        <div
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
                             <div
                                 class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                 <div>
@@ -170,12 +179,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out" width="320" height="250" src="/images/sample.webp"
-                                title="talent" alt="talent" />
+                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
                     </div>
                     <div class="lg:flex items-center justify-center gap-6 mt-6">
-                        <div class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                        <div
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
                             <div
                                 class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                 <div>
@@ -185,10 +195,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out" width="320" height="250" src="/images/sample.webp"
-                                title="talent" alt="talent" />
+                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
-                        <div class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
+                        <div
+                            class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:w-[320px] lg:h-[250px] lg:mt-0 mt-6">
                             <div
                                 class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                 <div>
@@ -198,9 +209,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out" width="320" height="250" src="/images/sample.webp"
-                                title="talent" alt="talent" />
+                            <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                width="320" height="250" src="/images/sample.webp" title="talent" alt="talent" />
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container lg:mt-16 mt-4">
+            <div class="lg:flex items-center justify-center lg:mt-10 mt-6">
+                <div class="lg:w-10/12">
+                    <h2 class="lg:text-4xl text-xl font-bold text-primaryColor text-center">
+                        Jims Honey Sudah Tersebar di Seluruh Indonesia
+                    </h2>
+                    <div class="bg-gray-50 rounded-xl lg:mt-10 mt-6">
+                        <nuxt-img src="/images/maps.png" class="w-full" width="" title="maps" alt="maps"
+                            loading="lazy" />
                     </div>
                 </div>
             </div>

@@ -15,11 +15,17 @@ export const useUpdateStatusStore = defineStore('updateStatus', () => {
             const response = await $api.put(`/reseller/${status.id}`, data);
             if (response) {
                 status.isLoading = false;
+                toast('Berhasil update status', {
+                    theme: "light",
+                    type: "success",
+                    transition: "slide",
+                    dangerouslyHTMLString: true,
+                });
             }
         } catch (error) {
             status.isLoading = false;
             toast('Terjadi kesalahan', {
-                theme: "dark",
+                theme: "light",
                 type: "warning",
                 transition: "slide",
                 dangerouslyHTMLString: true,

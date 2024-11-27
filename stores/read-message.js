@@ -19,7 +19,7 @@ export const useReadMessageStore = defineStore('readMessage', () => {
         } catch (error) {
             message.isLoading = false;
             toast('Terjadi kesalahan', {
-                theme: "dark",
+                theme: "light",
                 type: "warning",
                 transition: "slide",
                 dangerouslyHTMLString: true,

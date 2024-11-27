@@ -1,4 +1,5 @@
 <template>
+    <LoadingScreen :isVisible="isLoading" />
     <!-- RESELLER COUNT -->
     <div class="lg:grid grid-cols-4 gap-4">
         <div
@@ -232,6 +233,7 @@ import { ref, onMounted, watch } from 'vue';
 import Pagination from '../Pagination.vue';
 import { useReadMessageStore } from '@/stores/read-message';
 import { saveAs } from 'file-saver';
+import LoadingScreen from '../LoadingScreen.vue';
 
 const { $api, $moment, $formatNumber } = useNuxtApp();
 
@@ -378,7 +380,9 @@ const pagination = ref({
 });
 
 const lists = ref([])
+const isLoading = ref(true)
 const getLists = async (page = 1) => {
+    isLoading.value = true
     try {
         const start_date = date.value[0] ? $moment(date.value[0]).format('YYYY-MM-DD') : null;
         const end_date = date.value[1] ? $moment(date.value[1]).format('YYYY-MM-DD') : null;
@@ -408,8 +412,10 @@ const getLists = async (page = 1) => {
             total_pages: paginate.total_pages,
             total_items: paginate.total_items
         };
+        isLoading.value = false
     } catch (error) {
         console.log(error);
+        isLoading.value = false
     }
 };
 

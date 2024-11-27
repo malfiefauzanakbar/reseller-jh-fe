@@ -3,7 +3,7 @@
         'header left-0 top-0 z-20 flex w-full items-center lg:p-0 p-2',
         sticky ? 'dark:bg-gray-dark dark:shadow-sticky-dark fixed z-40 bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition shadow-sm' : 'absolute bg-transparent'
     ]">
-        <div class="container lg:px-4 px-0">
+        <div class="container">
             <div class="relative lg:-mx-4 flex items-center justify-between">
                 <div class="max-w-full lg:px-4 xl:mr-12">
                     <nuxt-img src="/images/logo.webp" class="mr-2" width="60" title="" alt="" loading="lazy" />
@@ -58,17 +58,10 @@
                                         Daftar
                                     </a>
                                 </li>
-                                <!-- <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'register' }">
-                                    <a @click.prevent="scrollToSection('register')"
-                                        class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
-                                        Biaya & Flow
-                                    </a>
-                                </li> -->
                             </ul>
                         </nav>
                     </div>
-                    <div class="flex items-center justify-end pr-10 lg:pr-0">
+                    <!-- <div class="flex items-center justify-end pr-10 lg:pr-0">
                         <a href="https://jimshoneyofficial.co.id" target="_blank"
                             class="bg-primaryColor lg:px-5 px-3 lg:py-2.5 py-2 rounded-lg lg:font-medium shadow-md shadow-gray-300 transition-all text-white lg:text-base text-sm">
                             <client-only>
@@ -76,7 +69,7 @@
                             </client-only>
                             Order Sekarang
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

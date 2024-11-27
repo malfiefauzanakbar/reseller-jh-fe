@@ -10,20 +10,19 @@ export default {
   ],
   theme: {
     extend: {
-      screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1536px",
-      },
       colors: {
         primaryColor: '#E8B5BA',
       },
     },
     container: {
-      center: true,
-      padding: "16px",
+      center: true, // Untuk membuat container terpusat secara otomatis
+      padding: {
+        DEFAULT: '1rem', // Padding default
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
     },
   },
   plugins: [],

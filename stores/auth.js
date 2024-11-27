@@ -81,7 +81,7 @@ export const useAuthStore = defineStore("auth", {
       } catch (error) {
         this.isRegis = false;
         toast("Terjadi kesalahan", {
-          theme: "dark",
+          theme: "light",
           type: "warning",
           transition: "slide",
           dangerouslyHTMLString: true,

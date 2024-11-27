@@ -1,4 +1,5 @@
 <template>
+    <LoadingScreen :isVisible="isLoading" />
     <h2 class="font-medium mt-8 text-2xl">
         Daftar User
     </h2>
@@ -195,9 +196,11 @@ import { ref, watch, onMounted } from 'vue';
 import Pagination from '../Pagination.vue';
 import { saveAs } from 'file-saver';
 import { useUpdateStatusStore } from '@/stores/update-status';
+import LoadingScreen from '../LoadingScreen.vue';
 
 const { $api, $moment } = useNuxtApp();
 const date = ref([]);
+const isLoading = ref(true)
 
 watch(date, (newValue, oldValue) => {
     if (newValue !== oldValue) {
@@ -215,6 +218,7 @@ const pagination = ref({
 
 const lists = ref([])
 const getLists = async (page = 1) => {
+    isLoading.value = true
     try {
         const start_date = date.value[0] ? $moment(date.value[0]).format('YYYY-MM-DD') : null;
         const end_date = date.value[1] ? $moment(date.value[1]).format('YYYY-MM-DD') : null;
@@ -244,8 +248,10 @@ const getLists = async (page = 1) => {
             total_pages: paginate.total_pages,
             total_items: paginate.total_items
         };
+        isLoading.value = false
     } catch (error) {
         console.log(error);
+        isLoading.value = false
     }
 };
 

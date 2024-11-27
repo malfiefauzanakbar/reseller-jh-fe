@@ -29,72 +29,52 @@
                     <div class="lg:grid grid-cols-2 gap-4">
                         <div>
                             <div class="relative lg:mt-0 mt-3">
-                                <Field type="text" id="fullname_section" name="fullname" autocomplete="off"
-                                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                <Field type="text" name="fullname" autocomplete="off"
+                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     :class="{
                                         'border-red-500': errors.fullname,
-                                    }" placeholder="" v-model="fullname" validateOnInput />
-                                <label for="fullname_section"
-                                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                    Nama Lengkap
-                                </label>
+                                    }" placeholder="Masukkan nama lengkap" v-model="fullname" validateOnInput />
                             </div>
                             <div v-if="errors.fullname" class="text-red-500 mt-1 text-xs italic">{{ errors.fullname }}</div>
                         </div>
                         <div>
                             <div class="relative lg:mt-0 mt-3">
-                                <Field type="text" id="whatsapp_no_section" name="whatsapp_no" autocomplete="off"
-                                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                <Field type="text" name="whatsapp_no" autocomplete="off"
+                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     :class="{
                                         'border-red-500': errors.whatsapp_no,
-                                    }" placeholder="" v-model="whatsapp_no" validateOnInput />
-                                <label for="whatsapp_no_section"
-                                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                    No Whatsapp
-                                </label>
+                                    }" placeholder="Masukkan no whatsapp" v-model="whatsapp_no" validateOnInput />
                             </div>
                             <div v-if="errors.whatsapp_no" class="text-red-500 mt-1 text-xs italic">{{ errors.whatsapp_no }}
                             </div>
                         </div>
                         <div>
                             <div class="relative lg:mt-0 mt-3">
-                                <Field type="email" id="email_section" name="email" autocomplete="off"
-                                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                <Field type="email" name="email" autocomplete="off"
+                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     :class="{
                                         'border-red-500': errors.email,
-                                    }" placeholder="" v-model="email" validateOnInput />
-                                <label for="email_section"
-                                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                    Email
-                                </label>
+                                    }" placeholder="Masukkan email" v-model="email" validateOnInput />
                             </div>
                             <div v-if="errors.email" class="text-red-500 mt-1 text-xs italic">{{ errors.email }}</div>
                         </div>
                         <div>
                             <div class="relative lg:mt-0 mt-3">
-                                <Field type="text" id="nik_section" name="nik" autocomplete="off"
-                                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                <Field type="text" name="nik" autocomplete="off"
+                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     :class="{
                                         'border-red-500': errors.nik,
-                                    }" placeholder="" v-model="nik" validateOnInput />
-                                <label for="nik_section"
-                                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                    NIK
-                                </label>
+                                    }" placeholder="Masukkan nik" v-model="nik" validateOnInput />
                             </div>
                             <div v-if="errors.nik" class="text-red-500 mt-1 text-xs italic">{{ errors.nik }}</div>
                         </div>
                     </div>
                     <div class="relative lg:mt-4 mt-3">
-                        <Field as="textarea" id="address_section" name="address" autocomplete="off"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        <Field as="textarea" name="address" autocomplete="off"
+                            class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer h-20"
                             :class="{
                                 'border-red-500': errors.address,
-                            }" placeholder="" v-model="address" validateOnInput />
-                        <label for="address_section"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-0 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                            Alamat
-                        </label>
+                            }" placeholder="Masukkan alamat" v-model="address" validateOnInput />
                     </div>
                     <div v-if="errors.address" class="text-red-500 mt-1 text-xs italic">{{ errors.address }}</div>
                     <div class="mt-4">
@@ -131,7 +111,7 @@ const router = useRouter();
 const runtimeConfig = useRuntimeConfig()
 const ktp = ref('');
 const fullname = ref('');
-const whatsapp_no = ref('');
+const whatsapp_no = ref('62');
 const email = ref('');
 const nik = ref('');
 const address = ref('');
@@ -144,13 +124,24 @@ const schema = object({
         .required('No whatsapp wajib diisi')
         .test(
             'only-numbers',
-            'No whatsApp hanya boleh angka',
+            'No whatsapp hanya boleh angka',
             (value) => /^[0-9]*$/.test(value || '')
         )
         .test(
             'start-with-62',
-            'No whatsApp harus diawali dengan 62',
+            'No whatsapp harus diawali dengan 62',
             (value) => value ? value.startsWith('62') : false
+        )
+        .test(
+            'no-zero-after-62',
+            'No whatsapp setelah 62 tidak boleh dimulai dengan 0',
+            (value) => {
+                if (value && value.startsWith('62')) {
+                    const after62 = value.substring(2);
+                    return !after62.startsWith('0');
+                }
+                return true;
+            }
         )
         .min(9, 'No whatsapp minimal 9 karakter'),
     email: Yup.string()

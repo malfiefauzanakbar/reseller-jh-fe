@@ -44,7 +44,7 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="group relative lg:block hidden"
+                                <li class="group relative"
                                     :class="{ 'text-primaryColor font-medium': activeSection === 'information' }">
                                     <a @click.prevent="scrollToSection('information')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">

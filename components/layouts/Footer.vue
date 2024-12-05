@@ -1,13 +1,9 @@
 <template>
     <div class="container lg:mt-24 mt-10 relative">
-        <nuxt-img src="/images/kincir.webp" class="absolute lg:right-16 right-10 bottom-0"  title="" alt="" loading="lazy" />
         <div class="bg-white border border-primaryColor rounded-xl lg:p-10 p-4 mb-4">
             <h2 class="lg:text-3xl text-xl font-bold">
                 Informasi Jims Honey
             </h2>
-            <p class="mt-2 font-light lg:text-base text-sm">
-                Got questions about the Landing Page UI Kit? Our team is here to help. Contact us for quick and friendly support.
-            </p>
             <div class="lg:grid grid-cols-3 gap-10 lg:mt-10 mt-5">
                 <div>
                     <h2 class="text-lg mb-4">

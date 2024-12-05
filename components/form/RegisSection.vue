@@ -4,14 +4,14 @@
             <div class="flex items-center justify-center">
                 <div class="w-full">
                     <label for="ktp-section"
-                        class="bg-image flex flex-col items-center justify-center w-full h-56 rounded-lg border-[1px] border-dashed border-primaryColor bg-[#F8E9EA] text-center cursor-pointer relative"
+                        class="bg-image flex flex-col items-center justify-center w-full lg:h-56 h-36 rounded-lg border-[1px] border-dashed border-primaryColor bg-[#F8E9EA] text-center cursor-pointer relative"
                         :style="{ backgroundImage: previewImage ? `url(${previewImage})` : null, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }">
-                        <div class="text-primaryColor mb-4" v-if="!previewImage">
+                        <div class="text-primaryColor lg:mb-4 mb-2" v-if="!previewImage">
                             <client-only>
-                                <font-awesome-icon :icon="['fa', 'image']" class="text-6xl text-primaryColor" />
+                                <font-awesome-icon :icon="['fa', 'image']" class="lg:text-6xl text-4xl text-primaryColor" />
                             </client-only>
                         </div>
-                        <p class="text-gray-900 font-medium" v-if="!previewImage">Upload Foto KTP</p>
+                        <p class="text-gray-900 lg:font-medium lg:text-base text-sm" v-if="!previewImage">Upload Foto KTP</p>
                         <div class="w-7 h-7 rounded-full bg-white absolute bottom-2 right-2 flex items-center justify-center text-center shadow-lg"
                             v-if="previewImage">
                             <client-only>

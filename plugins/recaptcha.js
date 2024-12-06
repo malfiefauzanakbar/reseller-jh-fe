@@ -9,13 +9,6 @@ export default defineNuxtPlugin(nuxtApp => {
             badge: 'bottomright',
         },
     },
-    // loaderOptions: {
-    //   autoHideBadge: false,
-    //   useRecaptchaNet: true,
-    //   renderParameters: {
-    //     hl: 'id'
-    //   }
-    // }
   }
   nuxtApp.vueApp.use(VueReCaptcha, options)
 })

@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content:
-          "fashion, Jims Honey, supplier tas, join reseller jimshoney, reseller jimshoney, supplier jimshoney, jimshoney pusat, tas wanita, dompet wanita, powerbank, jam tangan, supplier jam tangan, supplier jam, supplier powerbank, grosir jimshoney, jimshoney official, jimshoney indonesia, supplier dompet, wholesale, jualan grosir, join reseller, dropship jimshoney, dropship, retail, fashion bags, style, lokal brand indonesia, dropshipper, belajar bisnis",
+            "fashion, Jims Honey, supplier tas, join reseller jimshoney, reseller jimshoney, supplier jimshoney, jimshoney pusat, tas wanita, dompet wanita, powerbank, jam tangan, supplier jam tangan, supplier jam, supplier powerbank, grosir jimshoney, jimshoney official, jimshoney indonesia, supplier dompet, wholesale, jualan grosir, join reseller, dropship jimshoney, dropship, retail, fashion bags, style, lokal brand indonesia, dropshipper, belajar bisnis",
         },
       ],
     },
@@ -39,13 +39,18 @@ export default defineNuxtConfig({
   router: {
     middleware: "auth",
   },
-  plugins: ["~/plugins/axios.js", "~/plugins/fontawesome.js"],
+  plugins: [
+    "~/plugins/axios.js",
+    "~/plugins/fontawesome.js",
+    "~/plugins/recaptcha.js"
+  ],
   veeValidate: {
     autoImports: true,
   },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL,
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     },
   },
   build: {
@@ -91,14 +96,14 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@pinia/nuxt",
-    '@nuxtjs/google-fonts'
+    "@nuxtjs/google-fonts",
   ],
   googleFonts: {
     families: {
-      "Rubik": [100, 300, 400, 500, 700, 900],
-      'Open+Sans': true,
+      Rubik: [100, 300, 400, 500, 700, 900],
+      "Open+Sans": true,
     },
-    display: 'swap',
+    display: "swap",
     preload: true,
     prefetch: true,
     download: true,

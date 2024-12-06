@@ -211,8 +211,7 @@ import { useIsMobile } from '~/composables/useIsMobile'
 
 const { scrollToSection } = useScrollToSection();
 const { isMobile } = useIsMobile()
-console.log(isMobile, 'isMobile')
-console.log(isMobile.value, 'isMobile')
+
 const reviews = [
     { img: '/images/customer/1.webp' },
     { img: '/images/customer/2.webp' },

@@ -387,7 +387,7 @@ const getLists = async (page = 1) => {
         const start_date = date.value[0] ? $moment(date.value[0]).format('YYYY-MM-DD') : null;
         const end_date = date.value[1] ? $moment(date.value[1]).format('YYYY-MM-DD') : null;
 
-        const response = await $api.get(`/reseller`, {
+        const response = await $api.get(`/reseller/list`, {
             params: {
                 page: page,
                 page_size: pagination.value.page_size,

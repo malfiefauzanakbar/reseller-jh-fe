@@ -183,7 +183,7 @@ const submitForm = async () => {
         formData.append("captcha_token", token);
         isSubmit.value = true
 
-        const response = await axios.post(`${runtimeConfig.public.apiBaseUrl}/reseller`, formData, {
+        const response = await axios.post(`${runtimeConfig.public.apiBaseUrl}/reseller/create`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },

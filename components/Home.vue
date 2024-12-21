@@ -31,34 +31,29 @@
     <section class="relative" id="information">
         <div class="container mt-10">
             <div class="flex items-center justify-center text-center">
-                <h2 class="lg:text-3xl text-xl font-bold lg:w-1/2 text-primaryColor">
+                <h2 class="lg:text-4xl text-2xl font-bold lg:w-1/2 text-primaryColor">
                     5 Alasan Harus Bergabung Menjadi Reseller Jims Honey
                 </h2>
             </div>
             <div class="max-w-5xl mx-auto lg:py-10 py-6 lg:mt-6">
                 <div class="relative">
                     <div class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center">
-                        <div class="lg:h-44 h-16"></div>
+                        <div class="lg:h-32 h-16"></div>
                         <div class="flex-1 border-l-[1px] border-dashed border-gray-300"></div>
-                        <div class="lg:h-44 h-16"></div>
+                        <div class="lg:h-32 h-16"></div>
                     </div>
-                    <div class="relative flex items-center mb-0">
+
+                    <div class="relative flex items-center lg:mb-0 mb-8">
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
                             <NuxtImg src="/images/customer/1.webp" priority format="webp" class="w-full lg:rounded-lg rounded-md" alt="Customer Review"
                                         title="Customer Review" />
-                            <!-- <carousel :autoplay="3000" :wrap-around="true">
-                                <slide v-for="(review, index) in reviews" :key="index">
-                                    <NuxtImg :src="review.img" priority format="webp" class="w-full lg:rounded-lg rounded-md" alt="Customer Review"
-                                        title="Customer Review" />
-                                </slide>
-                                <template #addons>
-                                    <pagination class="custom-pagination" />
-                                </template>
-                            </carousel> -->
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-[11px]">
-                                Jims Honey sudah 10 tahun berkomitmen di industri tas dan kulit sintetis.
+                            <h2 class="font-bold text-primaryColor lg:text-2xl text-base leading-5">
+                                10 Tahun Dedikasi
+                            </h2>
+                            <p class="text-gray-800 lg:text-base text-[11px] mt-1">
+                                Jims Honey terbukti telah menjadi brand terpercaya di industri tas dan kulit sintetis selama 10 tahun.
                             </p>
                         </div>
                         <div
@@ -67,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="relative flex items-center mb-0 flex-row-reverse">
+                    <div class="relative flex items-center lg:mb-0 mb-8 flex-row-reverse">
                         <div class="w-1/2 lg:pl-14 pl-6">
                             <carousel :autoplay="3000" :wrap-around="true">
                                 <slide v-for="(product, index) in products" :key="index">
@@ -80,8 +75,11 @@
                             </carousel>
                         </div>
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
-                            <p class="text-gray-800 lg:text-lg text-[11px]">
-                                Berhasil menjual produk berkualitas dengan harga yang terjangkau.
+                            <h2 class="font-bold text-primaryColor lg:text-2xl text-base leading-5">
+                                Kualitas Terpercaya, Harga Terjangkau
+                            </h2>
+                            <p class="text-gray-800 lg:text-base text-[11px] mt-1">
+                                Menyediakan berbagai produk berkualitas premium dengan harga yang ramah di kantong.
                             </p>
                         </div>
                         <div
@@ -90,14 +88,17 @@
                         </div>
                     </div>
 
-                    <div class="relative flex items-center mb-0">
+                    <div class="relative flex items-center lg:mb-0 mb-8">
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
                             <nuxt-img src="/images/shegan.webp" class="w-full rounded-lg" width="" title="shegan" alt="shegan"
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-[11px]">
-                                Menyediakan tas dengan design yang up-to-date mengikuti minat masyarakat Indonesia.
+                            <h2 class="font-bold text-primaryColor lg:text-2xl text-base leading-5">
+                                Trendy & Stylish
+                            </h2>
+                            <p class="text-gray-800 lg:text-base text-[11px] mt-1">
+                                Desain modern yang selalu selangkah lebih maju mengikuti trend dan minat masyarakat Indonesia.
                             </p>
                         </div>
                         <div
@@ -106,15 +107,17 @@
                         </div>
                     </div>
 
-                    <div class="relative flex items-center mb-0 flex-row-reverse">
+                    <div class="relative flex items-center lg:mb-0 mb-8 flex-row-reverse">
                         <div class="w-1/2 lg:pl-14 pl-6">
                             <nuxt-img src="/images/grafik.webp" class="w-full rounded-lg" width="" title="Grafik" alt="Grafik"
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
-                            <p class="text-gray-800 lg:text-lg text-[11px]">
-                                Hanya dengan minimal belanja <span class="line-through">Rp1.000.000</span> <span
-                                class="font-medium">Rp500.000</span> seller sudah bisa mendapat proyeksi keuntungan hingga 10% - 30%.
+                            <h2 class="font-bold text-primaryColor lg:text-2xl text-base leading-5">
+                                Modal Kecil, Untung Besar
+                            </h2>
+                            <p class="text-gray-800 lg:text-base text-[11px] mt-1">
+                                Hanya dengan belanja mulai <span class="line-through">Rp1.000.000</span> <span class="font-bold">Rp500.000</span>, kamu bisa raih keuntungan hingga 10%-30%.
                             </p>
                         </div>
                         <div
@@ -129,8 +132,11 @@
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-[11px]">
-                                Jims Honey telah berkolaborasi dengan artis dan influencer tanah air.
+                            <h2 class="font-bold text-primaryColor lg:text-2xl text-base leading-5">
+                                Dipercaya Para Artis
+                            </h2>
+                            <p class="text-gray-800 lg:text-base text-[11px] mt-1">
+                                Selalu rutin berkolaborasi dengan artis & influencer ternama untuk memperluas jangkauan.
                             </p>
                         </div>
                         <div
@@ -143,8 +149,8 @@
         </div>
         <div class="container lg:mt-16 mt-4 relative">
             <div class="flex items-center justify-center text-center">
-                <h2 class="lg:text-3xl text-xl font-bold lg:w-1/2 text-primaryColor">
-                    Beberapa Artis yang Pernah Bekerjasama
+                <h2 class="lg:text-4xl text-2xl font-bold lg:w-1/2 text-primaryColor">
+                    Dikenal dan Dipercaya Para Artis Ternama
                 </h2>
             </div>
             <div class="lg:mt-10">
@@ -175,13 +181,13 @@
             </div>
         </div>
         <div class="container lg:mt-20 mt-4">
-            <div class="lg:flex items-center justify-center lg:mt-10 mt-6">
+            <div class="lg:flex items-center justify-center mt-10">
                 <div class="lg:w-11/12">
-                    <h2 class="lg:text-3xl text-xl font-bold text-primaryColor text-center">
-                        Jims Honey Sudah Tersebar di Seluruh Indonesia
+                    <h2 class="lg:text-4xl text-2xl font-bold text-primaryColor text-center">
+                        Kami Bangga Menemani Reseller di Seluruh Indonesia
                     </h2>
                     <div class="lg:mt-16 mt-6">
-                        <nuxt-img src="/images/maps.webp" class="w-full" width="" title="maps" alt="maps"
+                        <nuxt-img src="/images/maps.png" class="w-full" width="" title="maps" alt="maps"
                             loading="lazy" />
                     </div>
                 </div>
@@ -191,8 +197,8 @@
     <section class="lg:mt-20 mt-10" id="register">
         <div class="container">
             <div class="flex items-center justify-center text-center">
-                <h2 class="lg:text-3xl text-xl font-bold lg:w-1/2 text-primaryColor">
-                    Yuk Bergabung jadi Reseller Jims Honey
+                <h2 class="lg:text-4xl text-2xl font-bold lg:w-2/3 text-primaryColor">
+                    Jangan Tunggu Lagi, Jadilah Bagian dari Jims Honey Hari Ini!
                 </h2>
             </div>
             <div class="flex items-center justify-center lg:mt-10 mt-4">

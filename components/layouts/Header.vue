@@ -38,21 +38,21 @@
                             ]">
                             <ul class="block lg:flex lg:space-x-12">
                                 <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'home' }">
+                                    :class="{ 'text-primaryColor font-bold': activeSection === 'home' }">
                                     <a @click.prevent="scrollToSection('home')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Home
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'information' }">
+                                    :class="{ 'text-primaryColor font-bold': activeSection === 'information' }">
                                     <a @click.prevent="scrollToSection('information')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Informasi
                                     </a>
                                 </li>
                                 <li class="group relative"
-                                    :class="{ 'text-primaryColor font-medium': activeSection === 'register' }">
+                                    :class="{ 'text-primaryColor font-bold': activeSection === 'register' }">
                                     <a @click.prevent="scrollToSection('register')"
                                         class="flex py-2 text-lg lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 dark:hover:text-primaryColor transition duration-300 ease-in-out cursor-pointer">
                                         Daftar

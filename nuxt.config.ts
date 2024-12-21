@@ -1,5 +1,3 @@
-import Critters from "critters-webpack-plugin";
-
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
@@ -53,45 +51,6 @@ export default defineNuxtConfig({
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     },
   },
-  build: {
-    loaders: {
-      scss: {
-        additionalData: `@import "@/assets/styles/variables.scss";`,
-      },
-    },
-    extend(config, { isDev, isClient }) {
-      if (!isDev) {
-        config.plugins.push(
-          new Critters({
-            preload: "swap",
-            compress: true,
-            pruneSource: false,
-          })
-        );
-      }
-    },
-    extractCSS: true,
-    analyze: true,
-    optimization: {
-      minimize: true,
-    },
-    postcss: {
-      plugins: {
-        "postcss-import": {},
-        "postcss-url": {},
-        "@fullhuman/postcss-purgecss": {
-          content: [
-            "./components/**/*.vue",
-            "./layouts/**/*.vue",
-            "./pages/**/*.vue",
-            "./plugins/**/*.js",
-            "./nuxt.config.ts",
-          ],
-          safelist: ["html", "body"],
-        },
-      },
-    },
-  },
   modules: [
     "@nuxt/image",
     "@vee-validate/nuxt",
@@ -100,7 +59,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      Rubik: [100, 300, 400, 500, 700, 900],
+      "Baloo 2": [100, 300, 400, 500, 700, 900],
       "Open+Sans": true,
     },
     display: "swap",

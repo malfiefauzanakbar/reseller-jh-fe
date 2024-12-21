@@ -44,7 +44,9 @@
                     </div>
                     <div class="relative flex items-center mb-0">
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
-                            <carousel :autoplay="3000" :wrap-around="true">
+                            <NuxtImg src="/images/customer/1.webp" priority format="webp" class="w-full lg:rounded-lg rounded-md" alt="Customer Review"
+                                        title="Customer Review" />
+                            <!-- <carousel :autoplay="3000" :wrap-around="true">
                                 <slide v-for="(review, index) in reviews" :key="index">
                                     <NuxtImg :src="review.img" priority format="webp" class="w-full lg:rounded-lg rounded-md" alt="Customer Review"
                                         title="Customer Review" />
@@ -52,10 +54,10 @@
                                 <template #addons>
                                     <pagination class="custom-pagination" />
                                 </template>
-                            </carousel>
+                            </carousel> -->
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-xs">
+                            <p class="text-gray-800 lg:text-lg text-[11px]">
                                 Jims Honey sudah 10 tahun berkomitmen di industri tas dan kulit sintetis.
                             </p>
                         </div>
@@ -78,7 +80,7 @@
                             </carousel>
                         </div>
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
-                            <p class="text-gray-800 lg:text-lg text-xs">
+                            <p class="text-gray-800 lg:text-lg text-[11px]">
                                 Berhasil menjual produk berkualitas dengan harga yang terjangkau.
                             </p>
                         </div>
@@ -94,7 +96,7 @@
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-xs">
+                            <p class="text-gray-800 lg:text-lg text-[11px]">
                                 Menyediakan tas dengan design yang up-to-date mengikuti minat masyarakat Indonesia.
                             </p>
                         </div>
@@ -110,7 +112,7 @@
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pr-14 pr-6 lg:py-0 py-2">
-                            <p class="text-gray-800 lg:text-lg text-xs">
+                            <p class="text-gray-800 lg:text-lg text-[11px]">
                                 Hanya dengan minimal belanja <span class="line-through">Rp1.000.000</span> <span
                                 class="font-medium">Rp500.000</span> seller sudah bisa mendapat proyeksi keuntungan hingga 10% - 30%.
                             </p>
@@ -127,7 +129,7 @@
                                 loading="lazy" />
                         </div>
                         <div class="w-1/2 lg:pl-14 pl-6">
-                            <p class="text-gray-800 lg:text-lg text-xs">
+                            <p class="text-gray-800 lg:text-lg text-[11px]">
                                 Jims Honey telah berkolaborasi dengan artis dan influencer tanah air.
                             </p>
                         </div>
@@ -224,7 +226,6 @@ const products = [
     { img: '/images/product/3.webp' },
     { img: '/images/product/4.webp' },
     { img: '/images/product/5.webp' },
-    { img: '/images/product/6.webp' },
 ];
 const config = reactive({
   itemsToShow: 3,

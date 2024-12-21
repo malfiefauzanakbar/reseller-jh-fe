@@ -158,17 +158,17 @@
                     <Slide v-for="(talent, index) in talents" :key="index">
                         <div class="carousel__item">
                             <div
-                                class="overflow-hidden cursor-pointer lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
+                                class="overflow-hidden lg:rounded-xl rounded-md relative group lg:mt-0 mt-6">
                                 <div
-                                    class="lg:rounded-xl rounded-md z-20 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-full lg:h-[250px]">
+                                    class="lg:rounded-xl rounded-md z-20 opacity-1 absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end lg:w-full lg:h-[250px]">
                                     <div>
                                         <div
-                                            class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transform transition duration-300 ease-in-out">
+                                            class="lg:p-6 p-4 space-y-3 lg:text-xl text-sm">
                                             <div class="font-normal">{{ talent.name }}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <nuxt-img class="w-full group-hover:scale-110 transition duration-300 ease-in-out"
+                                <nuxt-img class="w-full"
                                     :src="talent.img" :title="talent.name" :alt="talent.name" />
                             </div>
                         </div>

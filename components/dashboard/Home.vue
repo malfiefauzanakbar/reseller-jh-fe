@@ -128,7 +128,10 @@
                         Email
                     </th>
                     <th scope="col" class="px-6 py-4 font-medium">
-                        Nik
+                        Tau Jims Honey Dari?
+                    </th>
+                    <th scope="col" class="px-6 py-4 font-medium">
+                        Alasan Join
                     </th>
                     <th scope="col" class="px-6 py-4 font-medium">
                         Alamat
@@ -153,13 +156,60 @@
                         {{ list.email ? list.email : '-'  }}
                     </td>
                     <td class="px-6 py-3">
-                        {{ list.nik ? list.nik : '-'  }}
+                        <div
+                            @mouseenter="list.isWhereKnow = true"
+                            @mouseleave="list.isWhereKnow = false"
+                            class="truncate w-[100px] cursor-pointer"
+                        >
+                            {{ list.WhereDidYouKnow ? list.WhereDidYouKnow : '-'  }}
+                        </div>
+                        <transition
+                            enter="transition ease-out duration-200"
+                            enter-from="opacity-0 scale-95"
+                            enter-to="opacity-100 scale-100"
+                            leave="transition ease-in duration-150"
+                            leave-from="opacity-100 scale-100"
+                            leave-to="opacity-0 scale-95"
+                        >
+                            <div
+                                v-if="list.isWhereKnow"
+                                class="absolute -translate-x-1/2 mt-2 px-3 py-2 bg-white text-black text-sm rounded-lg shadow-lg border border-gray-200"
+                                role="tooltip"
+                            >
+                                {{ list.WhereDidYouKnow ? list.WhereDidYouKnow : '-'  }}
+                            </div>
+                        </transition>
+                    </td>
+                    <td class="px-6 py-3">
+                        <div
+                            @mouseenter="list.isReasons = true"
+                            @mouseleave="list.isReasons = false"
+                            class="truncate w-[100px] cursor-pointer"
+                        >
+                            {{ list.ReasonsToJoin ? list.ReasonsToJoin : '-'  }}
+                        </div>
+                        <transition
+                            enter="transition ease-out duration-200"
+                            enter-from="opacity-0 scale-95"
+                            enter-to="opacity-100 scale-100"
+                            leave="transition ease-in duration-150"
+                            leave-from="opacity-100 scale-100"
+                            leave-to="opacity-0 scale-95"
+                        >
+                            <div
+                                v-if="list.isReasons"
+                                class="absolute -translate-x-1/2 mt-2 px-3 py-2 bg-white text-black text-sm rounded-lg shadow-lg border border-gray-200"
+                                role="tooltip"
+                            >
+                                {{ list.ReasonsToJoin ? list.ReasonsToJoin : '-'}}
+                            </div>
+                        </transition>
                     </td>
                     <td class="px-6 py-3">
                         <div
                             @mouseenter="list.isHover = true"
                             @mouseleave="list.isHover = false"
-                            class="truncate w-[150px] cursor-pointer"
+                            class="truncate w-[100px] cursor-pointer"
                         >
                             {{ list.address ? list.address : '-'  }}
                         </div>
@@ -401,7 +451,9 @@ const getLists = async (page = 1) => {
         const data = response.data.data.map(item => ({
             ...item,
             isLoading: false,
-            isHover: false
+            isHover: false,
+            isWhereKnow: false,
+            isReasons: false
         }));
         
         const paginate = response.data.pagination;

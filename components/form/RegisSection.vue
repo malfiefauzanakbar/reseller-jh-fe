@@ -1,7 +1,7 @@
 <template>
     <div class="shadow-lg rounded-xl lg:p-6 p-4 lg:w-1/2 w-full">
         <Form @submit="submitForm" :validation-schema="schema" v-slot="{ errors }">
-            <div class="flex items-center justify-center">
+            <!-- <div class="flex items-center justify-center">
                 <div class="w-full">
                     <label for="ktp-section"
                         class="bg-image flex flex-col items-center justify-center w-full lg:h-56 h-36 rounded-lg border-[1px] border-dashed border-primaryColor bg-[#F8E9EA] text-center cursor-pointer relative"
@@ -23,7 +23,7 @@
                     </label>
                     <div v-if="errors.ktp" class="text-red-500 mt-1 text-xs italic">{{ errors.ktp }}</div>
                 </div>
-            </div>
+            </div> -->
             <div class="lg:flex gap-4 lg:mt-6 mt-3">
                 <div class="w-full">
                     <div class="lg:grid grid-cols-2 gap-4">
@@ -48,33 +48,43 @@
                             <div v-if="errors.whatsapp_no" class="text-red-500 mt-1 text-xs italic">{{ errors.whatsapp_no }}
                             </div>
                         </div>
-                        <div>
-                            <div class="relative lg:mt-0 mt-3">
-                                <Field type="email" name="email" autocomplete="off"
-                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                    :class="{
-                                        'border-red-500': errors.email,
-                                    }" placeholder="Masukkan email" v-model="email" validateOnInput />
-                            </div>
-                            <div v-if="errors.email" class="text-red-500 mt-1 text-xs italic">{{ errors.email }}</div>
+                    </div>
+                    <div>
+                        <div class="relative lg:mt-4 mt-3">
+                            <Field type="email" name="email" autocomplete="off"
+                                class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                :class="{
+                                    'border-red-500': errors.email,
+                                }" placeholder="Masukkan email" v-model="email" validateOnInput />
                         </div>
-                        <div>
-                            <div class="relative lg:mt-0 mt-3">
-                                <Field type="text" name="nik" autocomplete="off"
-                                    class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                    :class="{
-                                        'border-red-500': errors.nik,
-                                    }" placeholder="Masukkan nik" v-model="nik" validateOnInput />
-                            </div>
-                            <div v-if="errors.nik" class="text-red-500 mt-1 text-xs italic">{{ errors.nik }}</div>
+                        <div v-if="errors.email" class="text-red-500 mt-1 text-xs italic">{{ errors.email }}</div>
+                    </div>
+                    <div>
+                        <div class="relative lg:mt-4 mt-3">
+                            <Field type="text" name="where_did_you_know" autocomplete="off"
+                                class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                :class="{
+                                    'border-red-500': errors.where_did_you_know,
+                                }" placeholder="Dari mana anda mengenal Jims Honey" v-model="where_did_you_know" validateOnInput />
                         </div>
+                        <div v-if="errors.where_did_you_know" class="text-red-500 mt-1 text-xs italic">{{ errors.where_did_you_know }}</div>
+                    </div>
+                    <div>
+                        <div class="relative lg:mt-4 mt-3">
+                            <Field type="text" name="reasons_to_join" autocomplete="off"
+                                class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                :class="{
+                                    'border-red-500': errors.reasons_to_join,
+                                }" placeholder="Alasan ingin join Reseller Jims Honey" v-model="reasons_to_join" validateOnInput />
+                        </div>
+                        <div v-if="errors.reasons_to_join" class="text-red-500 mt-1 text-xs italic">{{ errors.reasons_to_join }}</div>
                     </div>
                     <div class="relative lg:mt-4 mt-3">
                         <Field as="textarea" name="address" autocomplete="off"
                             class="block px-3 py-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer h-20"
                             :class="{
                                 'border-red-500': errors.address,
-                            }" placeholder="Masukkan alamat" v-model="address" validateOnInput />
+                            }" placeholder="Masukkan alamat domisili" v-model="address" validateOnInput />
                     </div>
                     <div v-if="errors.address" class="text-red-500 mt-1 text-xs italic">{{ errors.address }}</div>
                     <div class="mt-4">
@@ -110,16 +120,15 @@ import { ref } from "vue";
 
 const router = useRouter();
 const runtimeConfig = useRuntimeConfig()
-const ktp = ref('');
 const fullname = ref('');
 const whatsapp_no = ref('62');
 const email = ref('');
-const nik = ref('');
+const where_did_you_know = ref('');
+const reasons_to_join = ref('');
 const address = ref('');
 const isSubmit = ref(false);
 
 const schema = object({
-    ktp: string().required('Foto ktp wajib diisi'),
     fullname: string().required('Nama lengkap wajib diisi'),
     whatsapp_no: Yup.string()
         .required('No whatsapp wajib diisi')
@@ -148,25 +157,10 @@ const schema = object({
     email: Yup.string()
         .required('Email wajib diisi')
         .email('Format email tidak valid'),
-    nik: Yup.string()
-        .required('Nik wajib diisi')
-        .test(
-            'only-numbers',
-            'Nik hanya boleh angka',
-            (value) => /^[0-9]*$/.test(value || '')
-        ),
+    where_did_you_know: string().required('Form wajib diisi'),
+    reasons_to_join: string().required('Form wajib diisi'),
     address: string().required('Alamat wajib diisi'),
 });
-
-const previewImage = ref(null);
-
-const uploadKtp = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        ktp.value = file;
-        previewImage.value = URL.createObjectURL(file);
-    }
-};
 
 const { executeRecaptcha } = useGoogleRecaptcha()
 
@@ -174,11 +168,11 @@ const submitForm = async () => {
     const { token } = await executeRecaptcha('submit')
     try {
         const formData = new FormData();
-        formData.append("ktp", ktp.value);
         formData.append("fullname", fullname.value);
         formData.append("whatsapp_no", whatsapp_no.value);
         formData.append("email", email.value);
-        formData.append("nik", nik.value);
+        formData.append("where_did_you_know", where_did_you_know.value);
+        formData.append("reasons_to_join", reasons_to_join.value);
         formData.append("address", address.value);
         formData.append("captcha_token", token);
         isSubmit.value = true

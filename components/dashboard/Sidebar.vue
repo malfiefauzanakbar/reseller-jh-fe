@@ -49,7 +49,7 @@
                                             class="text-red-500 w-full text-left hover:bg-red-50 p-2 rounded-md"
                                             @click="() => { authStore.logout() }"
                                         >
-                                            Kelaur
+                                            Keluar
                                         </button>
                                     </MenuItem>
                                 </MenuItems>

@@ -1,5 +1,9 @@
 <template>
-    <Header/>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDBZ32TS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <Header />
     <NuxtPage />
     <Footer />
 </template>
@@ -16,5 +20,4 @@ const Footer = defineAsyncComponent(() =>
 
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
